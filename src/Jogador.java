@@ -1,3 +1,5 @@
+import javax.management.ObjectInstance;
+
 public class Jogador {
     private int vida;
     private int ataque;
@@ -44,24 +46,41 @@ public class Jogador {
     public void atacar(Inimigo inimigo){
         int vidaInimigo = inimigo.getVida();
         if(vidaInimigo !=0){
-            vidaInimigo--;
+            vidaInimigo = ataque-inimigo.getDefesa();
             inimigo.setVida(vidaInimigo);
         } else {
             System.out.println("O Inimigo está morto!");
         }
     }
 
-    public void estaVivo(){
+    public int  estaVivo(){
         if(vida > 0){
-            System.out.println("Está vivo!");
+            System.out.println("O Jogador está vivo!");
+            return 1;
         } else{
             System.out.println("Suas vidas acabaram!");
+            return 0;
         }
     }
 
-    public void iniciarBatalha(Object obj, int iniJ, int iniM){
-        //for que fique variando entre o numero de ataques para pontuar inimigoxjogador
-        //diminuir vidas inimigoxjogador
-        //atualizar danos.
+    public void iniciarBatalha(Object obj, int iniJ, int iniM) {
+
+        Inimigo inimigo = new Inimigo();
+        while (inimigo.estaVivo() != 0 && estaVivo() != 0) {
+            if (obj instanceof Mago) {
+                if (iniJ > iniM) {
+                    ((Mago) obj).atacar(inimigo);
+                    //inimigo.defender();
+                } else {
+                    inimigo.atacar();
+                }
+            } else {
+                if (iniJ > iniM) {
+                    ((Guerreiro) obj).atacar(inimigo);
+                } else {
+                    inimigo.atacar();
+                }
+            }
+        }
     }
 }
