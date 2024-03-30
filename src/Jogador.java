@@ -1,10 +1,12 @@
 public class Jogador {
     private int vida;
     private int ataque;
+    private int iniciativa;
 
-    public Jogador(int vida, int ataque) {
+    public Jogador(int vida, int ataque, int iniciativa) {
         this.vida = vida;
         this.ataque = ataque;
+        this.iniciativa = iniciativa;
     }
 
     public int getVida() {
@@ -21,5 +23,9 @@ public class Jogador {
 
     public void setAtaque(int ataque) {
         this.ataque = ataque;
+    }
+
+    public void getIniciativa(int iniciativa){
+        this.iniciativa = iniciativa;
     }
 }
