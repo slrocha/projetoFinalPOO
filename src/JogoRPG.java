@@ -13,7 +13,7 @@ public class JogoRPG {
         Inimigo inimigo = new Inimigo(); //vida e ataque
         Jogador jogador = new Jogador(); //
 
-        Jogo jogo = new Jogo(, ); //
+        Jogo jogo = new Jogo(); //
         jogo.iniciarJogo(option);
 
 
