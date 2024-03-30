@@ -8,6 +8,7 @@ public class Mago extends Jogador {
 		this.inteligencia = inteligencia;
 		this.magia = magia;
 	}
+	
 
 	public int getInteligencia() {
 		return inteligencia;
