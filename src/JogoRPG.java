@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class JogoRPG {
@@ -10,12 +11,13 @@ public class JogoRPG {
         System.out.println("2 - Mago ");
         int option = scanner.nextInt();
 
+        Random ataque = new Random();
+
         Inimigo inimigo = new Inimigo(); //vida e ataque
-        Jogador jogador = new Jogador(); //
+        Jogador jogador = new Jogador(ataque.nextInt()); //ataque - gera numero aleatórios
 
-        Jogo jogo = new Jogo(, ); //
+        Jogo jogo = new Jogo(inimigo, jogador);
         jogo.iniciarJogo(option);
-
 
 
     }
