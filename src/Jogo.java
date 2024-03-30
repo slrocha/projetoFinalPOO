@@ -27,11 +27,11 @@ public class Jogo {
         if(opcao == 1){
             System.out.println("Seja bem-vindo GUERREIRO, vamos iniciar sua batalha ");
             Guerreiro guerreiro = new Guerreiro();
-            jogador.iniciarBatalha(guerreiro, guerreiro.getVida(), guerreiro.getAtaque());
-        } else {
+            jogador.iniciarBatalha(guerreiro);
+        } else {-----------------------
             System.out.println("Seja bem-vindo MAGO, vamos iniciar sua batalha ");
             Mago mago = new Mago();
-            jogador.iniciarBatalha(mago, mago.getVida(), mago.getAtaque());
+            jogador.iniciarBatalha(mago);
         }
     }
 
