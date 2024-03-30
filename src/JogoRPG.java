@@ -14,7 +14,7 @@ public class JogoRPG {
         Random ataque = new Random();
 
         Inimigo inimigo = new Inimigo(); //vida e ataque
-        Jogador jogador = new Jogador(ataque.nextInt()); //ataque - gera numero aleatórios
+        Jogador jogador = new Jogador(ataque.nextInt(21)); //ataque - gera numero aleatórios
 
         Jogo jogo = new Jogo(inimigo, jogador);
         jogo.iniciarJogo(option);
