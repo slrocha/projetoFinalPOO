@@ -1,28 +1,38 @@
+import java.util.Scanner;
 
 public class Mago extends Jogador {
-	private int inteligencia;
-	private int magia;
+	Scanner leitura = new Scanner(System.in);
 
-	public Mago(int vida, int ataque, int inteligencia, int magia) {
-		super(vida, ataque);
-		this.inteligencia = inteligencia;
-		this.magia = magia;
+	public Mago(int vida, int ataque, int iniciativa, int eficacia) {
+		super(vida, ataque, iniciativa, eficacia);
 	}
 
-	public int getInteligencia() {
-		return inteligencia;
+	public void Ataque() {
+		System.out.println("Escolha seu ataque Mago:");
+		System.out.println("1- Bola de Fogo");
+		System.out.println("2- Raio Arcano");
+		System.out.println("3- Explosão de Gelo");
+		System.out.println("4- Míssil Mágico");
+		int ataqueEscolhido = leitura.nextInt();
+		switch (ataqueEscolhido) {
+			case 1:
+				System.out.println("BOLA DE FOGO!");
+				break;
+			case 2:
+				System.out.println("RAIO ARCANO!");
+				break;
+			case 3:
+				System.out.println("EXPLOSÃO DE GELO!");
+				break;
+			case 4:
+				System.out.println("MÍSSIL MÁGICO!");
+				break;
+			default:
+				System.out.println("Opção inválida!");
+		}
 	}
 
-	public void setInteligencia(int inteligencia) {
-		this.inteligencia = inteligencia;
-	}
+	public void Defesa() {
 
-	public int getMagia() {
-		return magia;
 	}
-
-	public void setMagia(int magia) {
-		this.magia = magia;
-	}
-
 }
