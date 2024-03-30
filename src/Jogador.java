@@ -59,7 +59,7 @@ public class Jogador {
         }
     }
 
-    public void iniciarBatalha(Object obj){
+    public void iniciarBatalha(Object obj, int iniJ, int iniM){
         //for que fique variando entre o numero de ataques para pontuar inimigoxjogador
         //diminuir vidas inimigoxjogador
         //atualizar danos.

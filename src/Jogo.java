@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Jogo {
     private Inimigo inimigo;
     private Jogador jogador;
@@ -24,14 +26,20 @@ public class Jogo {
     }
 
     public void iniciarJogo(int opcao){
+
+        Random ataque = new Random();
+
+        int iniJ = ataque.nextInt(21);
+        int iniM = ataque.nextInt(21);
+
         if(opcao == 1){
             System.out.println("Seja bem-vindo GUERREIRO, vamos iniciar sua batalha ");
             Guerreiro guerreiro = new Guerreiro();
-            jogador.iniciarBatalha(guerreiro);
-        } else {-----------------------
+            jogador.iniciarBatalha(guerreiro, iniJ, iniM);
+        } else {
             System.out.println("Seja bem-vindo MAGO, vamos iniciar sua batalha ");
             Mago mago = new Mago();
-            jogador.iniciarBatalha(mago);
+            jogador.iniciarBatalha(mago, iniJ, iniM);
         }
     }
 
