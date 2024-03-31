@@ -5,20 +5,16 @@ public class JogoRPG {
 
         Scanner scanner = new Scanner(System.in);
 
-//        System.out.println("Escolha seu personagem: ");
-////        System.out.println("1 - Guerreiro ");
-////        System.out.println("2 - Mago ");
-////        int option = scanner.nextInt();
-////
-        Inimigo inimigo = new Inimigo(); //vida e ataque
-////        Jogador jogador = new Jogador(); //
-////
-////        Jogo jogo = new Jogo(); //
-////        jogo.iniciarJogo(option);
+        System.out.println("Escolha seu personagem: ");
+        System.out.println("1 - Guerreiro ");
+        System.out.println("2 - Mago ");
+        int option = scanner.nextInt();
 
-        System.out.println("Vida: " + inimigo.getVida());
-        System.out.println("Ataque: " + inimigo.getAtaque());
-        System.out.println("Defesa: " + inimigo);
+        Inimigo inimigo = new Inimigo(); //vida e ataque
+        Jogador jogador = new Jogador(); //
+
+        Jogo jogo = new Jogo(); //
+        jogo.iniciarJogo(option);
 
 
 
