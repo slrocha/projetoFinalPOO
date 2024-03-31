@@ -37,13 +37,17 @@ public class Jogo {
 
     public void iniciarBatalha( String type) {
         Random option = new Random();
-        int iniJogador = option.nextInt(21);
-        int iniInimigo = option.nextInt(21);
+        int cont = 0;
 
-        System.out.println("Jogador: " + iniJogador);
-        System.out.println("Inimigo: " + iniInimigo);
+
+
 
         while (inimigo.estaVivo() != 0 || jogador.estaVivo() != 0) {
+            System.out.println("=========================");
+            int iniJogador = option.nextInt(21);
+            int iniInimigo = option.nextInt(21);
+            System.out.println("Iniciativa do Jogador: " + iniJogador);
+            System.out.println("Iniciativa do Inimigo: " + iniInimigo);
             if (type.equals("G")) {
                 Guerreiro guerreiro = new Guerreiro();
                 if (iniJogador > iniInimigo) {
