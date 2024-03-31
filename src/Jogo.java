@@ -25,24 +25,45 @@ public class Jogo {
         this.jogador = jogador;
     }
 
-    public void iniciarJogo(int opcao){
-
-        Random ataque = new Random();
-
-        int iniJ = ataque.nextInt(21);
-        int iniM = ataque.nextInt(21);
-
-        if(opcao == 1){
+    public void iniciarJogo(int opcao) {
+        if (opcao == 1) {
             System.out.println("Seja bem-vindo GUERREIRO, vamos iniciar sua batalha ");
-            Guerreiro guerreiro = new Guerreiro();
-            jogador.iniciarBatalha(guerreiro, iniJ, iniM);
+            iniciarBatalha( "G");
         } else {
             System.out.println("Seja bem-vindo MAGO, vamos iniciar sua batalha ");
-            Mago mago = new Mago();
-            jogador.iniciarBatalha(mago, iniJ, iniM);
+            iniciarBatalha("M");
         }
     }
 
+    public void iniciarBatalha( String type) {
+        Random option = new Random();
+        int iniJogador = option.nextInt(21);
+        int iniInimigo = option.nextInt(21);
 
+        System.out.println("Jogador: " + iniJogador);
+        System.out.println("Inimigo: " + iniInimigo);
+
+        while (inimigo.estaVivo() != 0 || jogador.estaVivo() != 0) {
+            if (type.equals("G")) {
+                Guerreiro guerreiro = new Guerreiro();
+                if (iniJogador > iniInimigo) {
+                    guerreiro.ataque();
+                    inimigo.defender(guerreiro);
+                } else {
+                    inimigo.atacar(guerreiro);
+                    guerreiro.defesa();
+                }
+            } else {
+                Mago mago = new Mago();
+                if (iniJogador > iniInimigo) {
+                    mago.Ataque();
+                    inimigo.defender(mago);
+                } else {
+                    inimigo.atacar(mago);
+                    mago.Defesa();
+                }
+            }
+        }
+    }
 
 }
