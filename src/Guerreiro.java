@@ -1,10 +1,12 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Guerreiro extends Jogador {
         public Guereiro( int vida, int ataque, int defesa, int iniciativa){
             super(vida, ataque, defesa, iniciativa);
         }
+  
         public void Ataque () {
             System.out.println("Escolha seu ataque Guerreiro:");
             System.out.println("1- Soco devastador");
@@ -33,6 +35,7 @@ public class Guerreiro extends Jogador {
 
             }
         }
+      
         public void Defesa () {
             System.out.println("Escolha sua defesa Guerreiro:");
             System.out.println("1- Escudo");
@@ -49,10 +52,8 @@ public class Guerreiro extends Jogador {
                     int defesa = rand.nextInt(20) + 1;
                     break;
             }
-
-
         }
+      
 
-    }
+      }
 
-}
