@@ -35,11 +35,31 @@ public class Jogo {
         if(opcao == 1){
             System.out.println("Seja bem-vindo GUERREIRO, vamos iniciar sua batalha ");
             Guerreiro guerreiro = new Guerreiro();
-            jogador.iniciarBatalha(guerreiro, iniJ, iniM);
+            iniciarBatalha(guerreiro, iniJ, iniM);
         } else {
             System.out.println("Seja bem-vindo MAGO, vamos iniciar sua batalha ");
             Mago mago = new Mago();
-            jogador.iniciarBatalha(mago, iniJ, iniM);
+            iniciarBatalha(mago, iniJ, iniM);
+        }
+    }
+
+    public void iniciarBatalha(Object obj, int iniJ, int iniM) {
+        Inimigo inimigo = new Inimigo();
+        while (inimigo.estaVivo() != 0 && jogador.estaVivo() != 0) {
+            if (obj instanceof Mago) {
+                if (iniJ > iniM) {
+                    ((Mago) obj).atacar(inimigo);
+                    inimigo.defender();
+                } else {
+                    inimigo.atacar();
+                }
+            } else {
+                if (iniJ > iniM) {
+                    ((Guerreiro) obj).atacar(inimigo);
+                } else {
+                    inimigo.atacar();
+                }
+            }
         }
     }
 

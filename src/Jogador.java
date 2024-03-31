@@ -1,4 +1,5 @@
 import javax.management.ObjectInstance;
+import java.util.Random;
 
 public class Jogador {
     private int vida;
@@ -6,9 +7,10 @@ public class Jogador {
     private int iniciativa;
     private int defesa;
   
-     public Jogador(int ataque) {
+     public Jogador(int vida, int ataque, int iniciativa, int defesa) {
         this.vida = 20;
         this.ataque = ataque;
+        this.iniciativa = iniciativa;
         this.defesa = defesa;
     }
   
@@ -45,13 +47,33 @@ public class Jogador {
     }
 
     public void atacar(Inimigo inimigo){
+        Random rand = new Random();
+        ataque = rand.nextInt(20) + 1;
+        int defesaInimigo = inimigo.getDefesa();
         int vidaInimigo = inimigo.getVida();
-        if(vidaInimigo !=0){
-            vidaInimigo = ataque-inimigo.getDefesa();
-            inimigo.setVida(vidaInimigo);
+
+        if(vidaInimigo !=0) {
+            if (ataque >= defesaInimigo) {
+                vidaInimigo = ataque - defesaInimigo;
+                System.out.println("Você acertou o inimigo!");
+                inimigo.setVida(vidaInimigo);
+            } else {
+                System.out.println("Você errou o ataque!");
+            }
         } else {
-            System.out.println("O Inimigo está morto!");
+            System.out.println("Inimigo está morto!");
         }
+    }
+
+    public void defender(Inimigo inimigo){
+         int ataqueI = inimigo.getAtaque();
+
+         if(ataqueI > defesa){
+             //vida = ataqueI - defesa;
+             System.out.println("O Jogador está vivo e possui " + vida + " pontos de vidas!");
+         } else {
+             System.out.println("O Jogador não sofreu dano");
+         }
     }
 
     public int estaVivo(){
@@ -61,27 +83,6 @@ public class Jogador {
         } else{
             System.out.println("Suas vidas acabaram!");
             return 0;
-        }
-    }
-
-    public void iniciarBatalha(Object obj, int iniJ, int iniM) {
-
-        Inimigo inimigo = new Inimigo();
-        while (inimigo.estaVivo() != 0 && estaVivo() != 0) {
-            if (obj instanceof Mago) {
-                if (iniJ > iniM) {
-                    ((Mago) obj).atacar(inimigo);
-                    inimigo.defender();
-                } else {
-                    inimigo.atacar();
-                }
-            } else {
-                if (iniJ > iniM) {
-                    ((Guerreiro) obj).atacar(inimigo);
-                } else {
-                    inimigo.atacar();
-                }
-            }
         }
     }
 }
