@@ -57,10 +57,19 @@ public class Inimigo {
         jogador.setVida(vidaAtualizadaJogador);
     }
 
+    public void defender(Jogador jogador){
+        int ataqueJogador = jogador.getAtaque();
+
+        if (ataqueJogador > defesa) {
+            vida = ataqueJogador - defesa;
+            System.out.println("O inimigo está vivo. Vida restante:  " + vida);
+        }else{
+            System.out.println("O inimigo não sofreu dano.");
+        }
+    }
 
     public int estaVivo() {
         if (vida > 0) {
-            System.out.println("O inimigo está vivo. Vida restante:  " + vida);
             return 1;
         } else {
             System.out.println("Inimigo está morto");
