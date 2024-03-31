@@ -3,6 +3,10 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Guerreiro extends Jogador {
+
+        private int eficacia;
+        Scanner leitura = new Scanner(System.in);
+        Random rand = new Random();
         public Guereiro( int vida, int ataque, int defesa, int iniciativa){
             super(vida, ataque, defesa, iniciativa);
         }
@@ -13,7 +17,7 @@ public class Guerreiro extends Jogador {
             System.out.println("2- Ataque do trovão");
             System.out.println("3- Ataque Giratório");
             System.out.println("4- Golpe de Espada");
-            ataque = leitura.nextInt();
+            int ataque = leitura.nextInt();
             switch (ataque) {
                 case 1:
                     System.out.println("SOCO DEVASTADOOOR!!");
@@ -40,15 +44,15 @@ public class Guerreiro extends Jogador {
             System.out.println("Escolha sua defesa Guerreiro:");
             System.out.println("1- Escudo");
             System.out.println("2- Desviar");
-            switch (ataque) {
+            int option = leitura.nextInt();
+            switch (option) {
                 case 1:
                     System.out.println("Posisão de defesa");
-                    defesa = 5;
+                    int defesa = 5;
                     break;
 
                 case 2:
                     System.out.println("Você optou desviar do ataque inimigo");
-                    Random rand = new Random();
                     int defesa = rand.nextInt(20) + 1;
                     break;
             }
