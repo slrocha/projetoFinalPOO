@@ -54,7 +54,7 @@ public class Jogador {
         }
     }
 
-    public int  estaVivo(){
+    public int estaVivo(){
         if(vida > 0){
             System.out.println("O Jogador está vivo!");
             return 1;
@@ -71,7 +71,7 @@ public class Jogador {
             if (obj instanceof Mago) {
                 if (iniJ > iniM) {
                     ((Mago) obj).atacar(inimigo);
-                    //inimigo.defender();
+                    inimigo.defender();
                 } else {
                     inimigo.atacar();
                 }

@@ -6,6 +6,7 @@ public class Guerreiro extends Jogador {
     Scanner leitura = new Scanner(System.in);
 
         public Guereiro( int vida, int ataque, int defesa, int iniciativa){
+
             super(vida, ataque, defesa, iniciativa);
         }
   
