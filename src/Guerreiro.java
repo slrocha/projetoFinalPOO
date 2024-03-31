@@ -1,9 +1,7 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Guerreiro extends Jogador {
-    Scanner leitura = new Scanner(System.in);
-
-    public Guerreiro extends
 
     Jogador() {
 
@@ -42,7 +40,6 @@ public class Guerreiro extends Jogador {
             System.out.println("Escolha sua defesa Guerreiro:");
             System.out.println("1- Escudo");
             System.out.println("2- Desviar");
-            ataque = leitura.nextInt();
             switch (ataque) {
                 case 1:
                     System.out.println("Posisão de defesa");
@@ -51,7 +48,8 @@ public class Guerreiro extends Jogador {
 
                 case 2:
                     System.out.println("Você optou desviar do ataque inimigo");
-                    defesa = 10;
+                    Random rand = new Random();
+                    int defesa = rand.nextInt(20) + 1;
                     break;
             }
 

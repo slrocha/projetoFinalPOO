@@ -25,7 +25,4 @@ public class Jogador {
         this.ataque = ataque;
     }
 
-    public void getIniciativa(int iniciativa){
-        this.iniciativa = iniciativa;
-    }
 }
