@@ -4,7 +4,30 @@ public class Jogador {
     private int vida;
     private int ataque;
     private int iniciativa;
+    private int defesa;
+  
+     public Jogador(int ataque) {
+        this.vida = 20;
+        this.ataque = ataque;
+        this.defesa = defesa;
+    }
+  
+    public int getIniciativa() {
+        return iniciativa;
+    }
 
+    public void setIniciativa(int iniciativa) {
+        this.iniciativa = iniciativa;
+    }
+
+    public int getDefesa() {
+        return defesa;
+    }
+
+    public void setDefesa(int defesa) {
+        this.defesa = defesa;
+    }
+  
     public int getVida() {
         return vida;
     }
