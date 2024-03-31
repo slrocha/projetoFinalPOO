@@ -25,6 +25,7 @@ public class Jogador {
     public Jogador(int ataque) {
         this.vida = 20;
         this.ataque = ataque;
+        this.defesa = defesa;
     }
 
     public int getVida() {
