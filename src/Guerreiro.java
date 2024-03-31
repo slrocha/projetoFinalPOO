@@ -3,11 +3,9 @@ import java.util.Random;
 
 public class Guerreiro extends Jogador {
   
-    Scanner leitura = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
-    public Guerreiro( int vida, int ataque, int defesa, int iniciativa){
-        super(vida, ataque, defesa, iniciativa);
-    }
+    public Guerreiro() { }
 
     public void ataque() {
         System.out.println("Escolha seu ataque Guerreiro:");
@@ -15,7 +13,7 @@ public class Guerreiro extends Jogador {
         System.out.println("2- Ataque do trovão");
         System.out.println("3- Ataque Giratório");
         System.out.println("4- Golpe de Espada");
-        int option = leitura.nextInt();
+        int option = scanner.nextInt();
         Inimigo inimigo = new Inimigo();
 
         switch (option) {
@@ -44,7 +42,7 @@ public class Guerreiro extends Jogador {
         System.out.println("Escolha sua defesa Guerreiro:");
         System.out.println("1- Escudo");
         System.out.println("2- Desviar");
-        int option = leitura.nextInt();
+        int option = scanner.nextInt();
         Inimigo inimigo = new Inimigo();
 
         switch (option) {

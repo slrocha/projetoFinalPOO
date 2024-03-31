@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class Mago extends Jogador {
 	Scanner leitura = new Scanner(System.in);
 
-	public Mago(int vida, int ataque, int iniciativa, int eficacia) {
-		super(vida, ataque, iniciativa, eficacia);
+	public Mago() {
 	}
 
 	public void Ataque() {

@@ -9,8 +9,6 @@ public class Inimigo {
 
     public Inimigo() {
         this.vida = 30;
-        this.ataque = gerarValoresAleatorios();
-        this.defesa = gerarValoresAleatorios();
     }
 
     public int getVida() {
@@ -43,27 +41,29 @@ public class Inimigo {
     }
 
     public void atacar(Jogador jogador) {
-        int vidaJogador = jogador.getVida();
+        ataque = gerarValoresAleatorios();
         int defesaJogador = jogador.getDefesa();
+        int vidaJogador = jogador.getVida();
 
-        vidaJogador = defesaJogador - ataque;
-
-        int vidaAtualizadaJogador =  vidaJogador;
-
-        if (vidaAtualizadaJogador <= 0) {
-            vidaAtualizadaJogador = 0;
+        if (ataque > defesaJogador) {
+            System.out.println("Ataque inimigo: " + ataque);
+            int vidaJogadorAtualizada = ataque - defesaJogador;
+            //System.out.println("Você acertou o Jogador!");
+            //jogador.setVida(vidaJogador - vidaJogadorAtualizada);
+        } else {
+            System.out.println("Você errou o ataque!");
         }
-
-        jogador.setVida(vidaAtualizadaJogador);
     }
 
-    public void defender(Jogador jogador){
+    public void defender(Jogador jogador) {
+        defesa = gerarValoresAleatorios();
         int ataqueJogador = jogador.getAtaque();
-
         if (ataqueJogador > defesa) {
-            //vida = ataqueJogador - defesa;
+            System.out.println("Defesa inimigo: " + defesa);
+            vida = ataqueJogador - defesa;
             System.out.println("O inimigo está vivo. Vida restante:  " + vida);
-        }else{
+        } else {
+            System.out.println("Defesa inimigo: " + defesa);
             System.out.println("O inimigo não sofreu dano.");
         }
     }
