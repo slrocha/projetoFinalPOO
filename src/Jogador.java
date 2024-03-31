@@ -5,7 +5,13 @@ public class Jogador {
     private int ataque;
     private int iniciativa;
     private int defesa;
-
+  
+     public Jogador(int ataque) {
+        this.vida = 20;
+        this.ataque = ataque;
+        this.defesa = defesa;
+    }
+  
     public int getIniciativa() {
         return iniciativa;
     }
@@ -21,13 +27,7 @@ public class Jogador {
     public void setDefesa(int defesa) {
         this.defesa = defesa;
     }
-
-    public Jogador(int ataque) {
-        this.vida = 20;
-        this.ataque = ataque;
-        this.defesa = defesa;
-    }
-
+  
     public int getVida() {
         return vida;
     }
