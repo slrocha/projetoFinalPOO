@@ -1,2 +1,2 @@
-public class Mago extends Jogador{
-}
+//public class Mago extends Jogador{
+//}
