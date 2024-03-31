@@ -2,9 +2,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Guerreiro extends Jogador {
-
-    Jogador() {
-
         public Guereiro( int vida, int ataque, int defesa, int iniciativa){
             super(vida, ataque, defesa, iniciativa);
         }
