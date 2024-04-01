@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Inimigo {
+public class Inimigo{
 
     private int vida;
     private int ataque;
@@ -45,14 +45,13 @@ public class Inimigo {
     public void atacar(Jogador jogador) {
         setAtaque(gerarValoresAleatorios());
         int defesaJogador = jogador.getDefesa();
-        int vidaJogador = jogador.getVida();
+        int vidaJodador = jogador.getVida();
 
         if (ataque > defesaJogador) {
             System.out.println("Ataque inimigo: " + ataque);
-            int vidaJogadorAtualizada = ataque - defesaJogador;
-            //System.out.println("Você acertou o Jogador!");
-            jogador.setVida(vidaJogador - vidaJogadorAtualizada);
-            System.out.println("Vida Jogador = " + jogador.getVida());
+            vidaJodador = vidaJodador - (ataque - defesaJogador);
+            jogador.setVida(vidaJodador);
+            System.out.println("Vida do inimigo:"+vida);
         } else {
             System.out.println("Você errou o ataque!");
         }
@@ -62,7 +61,7 @@ public class Inimigo {
         int ataqueJogador = jogador.getAtaque();
         if (ataqueJogador > defesa) {
             System.out.println("Defesa inimigo: " + defesa);
-            //vida = ataqueJogador - defesa;
+            vida = vida - (ataqueJogador - defesa);
             System.out.println("O inimigo está vivo. Vida restante:  " + vida);
         } else {
             System.out.println("Defesa inimigo: " + defesa);

@@ -37,13 +37,13 @@ public class Jogo {
 
     public void iniciarBatalha( String type) {
         Random option = new Random();
-        int iniJogador = 1; //= option.nextInt(21);
-        int iniInimigo = 2;//option.nextInt(21);
 
-        System.out.println("Jogador: " + iniJogador);
-        System.out.println("Inimigo: " + iniInimigo);
-
-        while (inimigo.estaVivo() != 0 || jogador.estaVivo() != 0) {
+        while (inimigo.estaVivo() != 0 && jogador.estaVivo() != 0) {
+            System.out.println("=========================");
+            int iniJogador = option.nextInt(21);
+            int iniInimigo = option.nextInt(21);
+            System.out.println("Iniciativa do Jogador: " + iniJogador);
+            System.out.println("Iniciativa do Inimigo: " + iniInimigo);
             if (type.equals("G")) {
                 Guerreiro guerreiro = new Guerreiro();
                 if (iniJogador > iniInimigo) {
@@ -56,14 +56,13 @@ public class Jogo {
             } else {
                 Mago mago = new Mago();
                 if (iniJogador > iniInimigo) {
-                    mago.Ataque();
+                    mago.ataque();
                     inimigo.defender(mago);
                 } else {
                     inimigo.atacar(mago);
-                    mago.Defesa();
+                    mago.defesa();
                 }
             }
         }
     }
-
 }
