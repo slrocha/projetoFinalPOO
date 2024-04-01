@@ -46,11 +46,11 @@ public class Mago extends Jogador {
 		switch (option) {
 			case 1:
 				System.out.println("Escudo Mágico ativado!");
-				defender(inimigo);
+				//defender(inimigo);
 				break;
 			case 2:
 				System.out.println("Teleporte ativado!");
-				defender(inimigo);
+				//defender(inimigo);
 				break;
 			default:
 				System.out.println("Opção inválida!");

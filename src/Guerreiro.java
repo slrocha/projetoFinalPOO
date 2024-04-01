@@ -45,12 +45,12 @@ public class Guerreiro extends Jogador {
         switch (option) {
             case 1:
                 System.out.println("Posição de defesa");
-                defender(inimigo);
+                //defender(inimigo);
                 break;
 
             case 2:
                 System.out.println("Você optou desviar do ataque inimigo");
-                defender(inimigo);
+                //defender(inimigo);
                 break;
         }
     }

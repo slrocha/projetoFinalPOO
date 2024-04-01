@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Inimigo{
+public class Inimigo {
 
     private int vida;
     private int ataque;
@@ -18,7 +18,7 @@ public class Inimigo{
     }
 
     public void setVida(int vida) {
-        this.vida = vida;
+        this.vida = vida <= 0 ? 0 : vida;
     }
 
     public int getAtaque() {
@@ -43,34 +43,22 @@ public class Inimigo{
     }
 
     public void atacar(Jogador jogador) {
-//        setAtaque(gerarValoresAleatorios());
-        int defesaJogador = jogador.getDefesa();
-        int vidaJodador = jogador.getVida();
         int ataqueInimigo = getAtaque();
+        int vidaJodador = jogador.getVida();
+        int defesaJogador = jogador.getDefesa();
+
+        System.out.println("Ataque Inimigo: " + ataqueInimigo);
+        System.out.println("Defesa Jogador: " + defesaJogador);
 
         if (ataqueInimigo > defesaJogador) {
-            System.out.println("Ataque inimigo: " + ataqueInimigo);
             vidaJodador = vidaJodador - (ataqueInimigo - defesaJogador);
             jogador.setVida(vidaJodador);
-            System.out.println("Vida do Jogador:"+vidaJodador);
+            System.out.println("\nPontos de vida Jogador: " + vidaJodador);
         } else {
-            System.out.println("Ataque inimigo: " + ataqueInimigo);
-            System.out.println("Inimigo errou o ataque!");
+            System.out.println("\nInimigo errou o ataque!");
+            System.out.println("\nPontos de vida Jogador: " + vidaJodador);
         }
-    }
-
-    public void defender(Jogador jogador) {
-        int ataqueJogador = jogador.getAtaque();
-        int defesaInimigo = getDefesa();
-
-        if (ataqueJogador > defesaInimigo) {
-            System.out.println("Defesa inimigo: " + defesaInimigo);
-            System.out.println("O inimigo está vivo. Vida restante:  " + getVida());
-        } else {
-            System.out.println("Defesa inimigo: " + defesaInimigo);
-            System.out.println("O inimigo não sofreu dano.");
-        }
-        setDefesa(gerarValoresAleatorios());
+        setAtaque(gerarValoresAleatorios());
     }
 
     public int estaVivo() {
