@@ -37,12 +37,11 @@ public class Jogo {
 
     public void iniciarBatalha( String type) {
         Random option = new Random();
-        int cont = 0;
 
 
 
 
-        while (inimigo.estaVivo() != 0 || jogador.estaVivo() != 0) {
+        while (inimigo.estaVivo() != 0 && jogador.estaVivo() != 0) {
             System.out.println("=========================");
             int iniJogador = option.nextInt(21);
             int iniInimigo = option.nextInt(21);
@@ -60,11 +59,11 @@ public class Jogo {
             } else {
                 Mago mago = new Mago();
                 if (iniJogador > iniInimigo) {
-                    mago.Ataque();
+                    mago.ataque();
                     inimigo.defender(mago);
                 } else {
                     inimigo.atacar(mago);
-                    mago.Defesa();
+                    mago.defesa();
                 }
             }
         }

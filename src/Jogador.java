@@ -57,11 +57,11 @@ public class Jogador {
     public void defender(Inimigo inimigo) {
         defesa = gerarValoresAleatorios();
         int ataqueI = inimigo.getAtaque();
-        if (ataqueI > defesa) {
+        if (ataqueI > defesa){
             System.out.println("Defesa jogador: " + defesa);
-           vida = ataqueI - defesa;
+            vida = vida - (ataqueI - defesa);
             System.out.println("O Jogador está vivo e possui " + vida + " pontos de vidas!");
-        } else {
+        }else {
             System.out.println("Defesa jogador: " + defesa);
             System.out.println("O Jogador não sofreu dano");
         }
