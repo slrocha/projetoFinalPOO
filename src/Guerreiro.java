@@ -32,6 +32,9 @@ public class Guerreiro extends Jogador {
                 System.out.println("GOLPE DE ESPADA!!");
                 atacar(inimigo);
                 break;
+            default:
+                System.out.println("Opção inválida!!");
+                break;
 
         }
     }
@@ -52,6 +55,8 @@ public class Guerreiro extends Jogador {
                 System.out.println("Você optou desviar do ataque inimigo");
                 defender(inimigo);
                 break;
+            default:
+                System.out.println("Opção inválida!!");
         }
     }
 }

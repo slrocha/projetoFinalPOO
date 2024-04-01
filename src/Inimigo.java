@@ -52,7 +52,11 @@ public class Inimigo{
             System.out.println("Ataque inimigo: " + ataqueInimigo);
             vidaJodador = vidaJodador - (ataqueInimigo - defesaJogador);
             jogador.setVida(vidaJodador);
-            System.out.println("Vida do Jogador:"+vidaJodador);
+            if (jogador.estaVivo()==1) {
+                System.out.println("Jogado ainda está vivo. Vida do Jogador:" + vidaJodador);
+            }else{
+                System.out.println("Suas vidas acabaram!");
+            }
         } else {
             System.out.println("Ataque inimigo: " + ataqueInimigo);
             System.out.println("Inimigo errou o ataque!");
@@ -65,7 +69,11 @@ public class Inimigo{
 
         if (ataqueJogador > defesaInimigo) {
             System.out.println("Defesa inimigo: " + defesaInimigo);
-            System.out.println("O inimigo está vivo. Vida restante:  " + getVida());
+            if (estaVivo() == 1){
+                System.out.println("O inimigo está vivo. Vida restante:  " + getVida());
+            }else{
+                System.out.println("Inimigo está morto");
+            }
         } else {
             System.out.println("Defesa inimigo: " + defesaInimigo);
             System.out.println("O inimigo não sofreu dano.");
@@ -77,7 +85,6 @@ public class Inimigo{
         if (getVida() > 0) {
             return 1;
         } else {
-            System.out.println("Inimigo está morto");
             return 0;
         }
     }

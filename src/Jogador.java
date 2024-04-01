@@ -62,10 +62,9 @@ public class Jogador {
     public void defender(Inimigo inimigo) {
         int defesaJogador = getDefesa();
         int ataqueI = inimigo.getAtaque();
-        int vidaJogador = getVida();
 
         if (ataqueI > defesaJogador){
-            System.out.println("O Jogador está vivo e possui " + getVida() + " pontos de vidas!");
+            System.out.println("Defesa jogador: " + defesaJogador);
         }else {
             System.out.println("Defesa jogador: " + defesaJogador);
             System.out.println("O Jogador não sofreu dano");
@@ -76,7 +75,6 @@ public class Jogador {
         if (getVida() > 0) {
             return 1;
         } else {
-            System.out.println("Suas vidas acabaram!");
             return 0;
         }
     }
