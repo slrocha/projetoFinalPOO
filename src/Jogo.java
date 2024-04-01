@@ -43,8 +43,10 @@ public class Jogo {
     public void iniciarBatalha( String type) {
 
         int iniJogador, iniInimigo;
+        Guerreiro guerreiro = new Guerreiro();
+        Mago mago = new Mago();
 
-        while (inimigo.estaVivo() != 0 && jogador.estaVivo() != 0) {
+        while (inimigo.estaVivo() != 0 && (guerreiro.estaVivo() != 0 || mago.estaVivo() !=0)) {
             System.out.println("=========================");
 
             iniJogador = gerarValoresAleatorios();
@@ -54,7 +56,7 @@ public class Jogo {
                 System.out.println("Iniciativa do Jogador: " + iniJogador);
                 System.out.println("Iniciativa do Inimigo: " + iniInimigo);
                 if (type.equals("G")) {
-                    Guerreiro guerreiro = new Guerreiro();
+
                     if (iniJogador > iniInimigo) {
                         guerreiro.ataque(inimigo);
                         inimigo.defender(guerreiro);
@@ -62,8 +64,11 @@ public class Jogo {
                         guerreiro.defesa(inimigo);
                         inimigo.atacar(guerreiro);
                     }
+
+                    System.out.println("\nVida Inimigo: " + inimigo.getVida());
+                    System.out.println("Vida Guerreiro: " + guerreiro.getVida());
                 } else {
-                    Mago mago = new Mago();
+
                     if (iniJogador > iniInimigo) {
                         mago.ataque(inimigo);
                         inimigo.defender(mago);
@@ -71,6 +76,8 @@ public class Jogo {
                         mago.defesa(inimigo);
                         inimigo.atacar(mago);
                     }
+                    System.out.println("\nVida Inimigo: " + inimigo.getVida());
+                    System.out.println("Vida Mago: " + mago.getVida());
                 }
             }
         }
