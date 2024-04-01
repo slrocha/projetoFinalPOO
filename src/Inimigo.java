@@ -8,7 +8,7 @@ public class Inimigo{
 
 
     public Inimigo() {
-        this.vida = 10;
+        this.vida = 30;
         this.defesa = gerarValoresAleatorios();
         this.ataque = gerarValoresAleatorios();
     }
@@ -44,22 +44,23 @@ public class Inimigo{
 
     public void atacar(Jogador jogador) {
 //        setAtaque(gerarValoresAleatorios());
+
         int defesaJogador = jogador.getDefesa();
         int vidaJodador = jogador.getVida();
         int ataqueInimigo = getAtaque();
 
-        if (ataqueInimigo > defesaJogador) {
-            System.out.println("Ataque inimigo: " + ataqueInimigo);
-            vidaJodador = vidaJodador - (ataqueInimigo - defesaJogador);
-            jogador.setVida(vidaJodador);
-            if (jogador.estaVivo()==1) {
-                System.out.println("Jogador ainda está vivo. Vida do Jogador:" + vidaJodador);
-            }else{
-                System.out.println("Suas vidas acabaram!");
+        if (jogador.estaVivo()==1) {
+            if (ataqueInimigo > defesaJogador) {
+                System.out.println("Ataque inimigo: " + ataqueInimigo);
+                vidaJodador = vidaJodador - (ataqueInimigo - defesaJogador);
+                jogador.setVida(vidaJodador);
+            } else {
+                System.out.println("Ataque inimigo: " + ataqueInimigo);
+                System.out.println("Inimigo errou o ataque!");
             }
         } else {
-            System.out.println("Ataque inimigo: " + ataqueInimigo);
-            System.out.println("Inimigo errou o ataque!");
+            System.out.println("A vida do jogador acabou " + vidaJodador);
+            System.out.println("Final de jogo! O inimigo derrotou o jogador");
         }
     }
 
@@ -67,16 +68,16 @@ public class Inimigo{
         int ataqueJogador = jogador.getAtaque();
         int defesaInimigo = getDefesa();
 
-        if (ataqueJogador > defesaInimigo) {
-            System.out.println("Defesa inimigo: " + defesaInimigo);
-            if (estaVivo() == 1){
-                System.out.println("O inimigo está vivo. Vida restante:  " + getVida());
-            }else{
-                System.out.println("Inimigo está morto");
+        if (estaVivo() == 1) {
+            if (ataqueJogador > defesaInimigo) {
+                System.out.println("Defesa inimigo: " + defesaInimigo);
+            } else {
+                System.out.println("Defesa inimigo: " + defesaInimigo);
+                System.out.println("O inimigo não sofreu dano.");
             }
         } else {
-            System.out.println("Defesa inimigo: " + defesaInimigo);
-            System.out.println("O inimigo não sofreu dano.");
+            System.out.println("Inimigo está morto");
+            System.out.println("Final de jogo! Jogador derrotou o inimigo");
         }
         setDefesa(gerarValoresAleatorios());
     }
