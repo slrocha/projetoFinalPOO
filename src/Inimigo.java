@@ -8,7 +8,7 @@ public class Inimigo{
 
 
     public Inimigo() {
-        this.vida = 30;
+        this.vida = 10;
         this.defesa = gerarValoresAleatorios();
         this.ataque = gerarValoresAleatorios();
     }
@@ -53,7 +53,7 @@ public class Inimigo{
             vidaJodador = vidaJodador - (ataqueInimigo - defesaJogador);
             jogador.setVida(vidaJodador);
             if (jogador.estaVivo()==1) {
-                System.out.println("Jogado ainda está vivo. Vida do Jogador:" + vidaJodador);
+                System.out.println("Jogador ainda está vivo. Vida do Jogador:" + vidaJodador);
             }else{
                 System.out.println("Suas vidas acabaram!");
             }

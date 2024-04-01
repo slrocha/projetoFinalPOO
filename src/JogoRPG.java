@@ -15,7 +15,5 @@ public class JogoRPG {
 
         Jogo jogo = new Jogo(inimigo, jogador);
         jogo.iniciarJogo(option);
-
-
     }
 }
