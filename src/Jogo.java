@@ -50,17 +50,17 @@ public class Jogo {
                     guerreiro.ataque(inimigo);
                     inimigo.defender(guerreiro);
                 } else {
-                    guerreiro.defesa();
+                    guerreiro.defesa(inimigo);
                     inimigo.atacar(guerreiro);
                 }
             } else {
                 Mago mago = new Mago();
                 if (iniJogador > iniInimigo) {
-                    mago.ataque();
+                    mago.ataque(inimigo);
                     inimigo.defender(mago);
                 } else {
                     inimigo.atacar(mago);
-                    mago.defesa();
+                    mago.defesa(inimigo);
                 }
             }
         }

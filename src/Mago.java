@@ -7,14 +7,14 @@ public class Mago extends Jogador {
 
 	}
 
-	public void ataque() {
+	public void ataque(Inimigo inimigo) {
 		System.out.println("Escolha seu ataque Mago:");
 		System.out.println("1- Bola de Fogo");
 		System.out.println("2- Raio Arcano");
 		System.out.println("3- Explosão de Gelo");
 		System.out.println("4- Míssil Mágico");
 		int option = scanner.nextInt();
-		Inimigo inimigo = new Inimigo();
+		//Inimigo inimigo = new Inimigo();
 
 		switch (option) {
 			case 1:
@@ -38,12 +38,12 @@ public class Mago extends Jogador {
 		}
 	}
 
-	public void defesa() {
+	public void defesa(Inimigo inimigo) {
 		System.out.println("Escolha sua defesa Mago:");
 		System.out.println("1- Escudo Mágico");
 		System.out.println("2- Teleporte");
 		int option = scanner.nextInt();
-		Inimigo inimigo = new Inimigo();
+		//Inimigo inimigo = new Inimigo();
 
 		switch (option) {
 			case 1:
