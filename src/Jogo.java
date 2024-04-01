@@ -1,9 +1,9 @@
 import java.util.Random;
 import java.util.Scanner;
+
 class Jogo {
     private Jogador jogador;
     private Inimigo inimigo;
-
 
     public Jogo(Inimigo inimigo, Jogador jogador) {
         this.inimigo = inimigo;
@@ -32,39 +32,49 @@ class Jogo {
         }
 
         System.out.println("Iniciando batalha...");
-        batalha(escolha);
+        iniciarBatalha(escolha);
     }
 
-    private void batalha(int escolha) {
+    private void iniciarBatalha(int escolha) {
         //Random random = new Random();
         System.out.println("=========================");
+        Guerreiro guerreiro = new Guerreiro();
+        Mago mago = new Mago();
 
-        while (inimigo.estaVivo() != 0 && jogador.estaVivo() != 0) {
+        while (inimigo.estaVivo() != 0 && (guerreiro.estaVivo() != 0 || mago.estaVivo() !=0)) {
 
             if (escolha == 1) {
-                Guerreiro guerreiro = new Guerreiro();
+                System.out.println("\nRodada do Jogador");
                 guerreiro.ataque(inimigo);
 
-                if (inimigo.estaVivo() == 0) {
+                if (inimigo.estaVivo() <= 0) {
                     System.out.println("Você derrotou o inimigo!");
                     return;
                 }
+
+                System.out.println("\nRodada do Inimigo");
                 inimigo.atacar(guerreiro);
 
-
+                if (guerreiro.estaVivo() <= 0) {
+                    System.out.println("Guerreiro foi derrotado");
+                    return;
+                }
             } else {
-                Mago mago = new Mago();
+                System.out.println("\nRodada do Jogador");
                 mago.ataque(inimigo);
 
                 if (inimigo.estaVivo() == 0) {
                     System.out.println("Você derrotou o inimigo!");
                     return;
                 }
+
+                System.out.println("\nRodada do Inimigo");
                 inimigo.atacar(mago);
-            }
-            if (jogador.estaVivo() == 0) {
-                System.out.println("Você foi derrotado pelo inimigo!");
-                return;
+
+                if (guerreiro.estaVivo() <= 0) {
+                    System.out.println("Mago foi derrotado");
+                    return;
+                }
             }
 
         }

@@ -6,7 +6,6 @@ public class Jogador {
     private int defesa;
 
     public Jogador() {
-
         this.vida = 20;
         this.defesa = gerarValoresAleatorios();
         this.ataque = gerarValoresAleatorios();
@@ -29,8 +28,12 @@ public class Jogador {
         return vida;
     }
 
-    public void setVida(int vida) {
-        this.vida = vida <= 0 ? 0 : vida;
+    public void setVida(int novaVida) {
+        if (novaVida <= 0) {
+            this.vida = 0;
+        } else {
+            this.vida = novaVida;
+        }
     }
 
     public int getAtaque() {
@@ -51,13 +54,11 @@ public class Jogador {
 
         if (ataqueJogador > defesaInimigo) {
             vidaInimigo = vidaInimigo - (ataqueJogador - defesaInimigo);
-            inimigo.setVida(vidaInimigo);
-            System.out.println("\nPontos de vida Inimigo: " + vidaInimigo);
+            inimigo.setVida(vidaInimigo <= 0 ? 0 : vidaInimigo);
         } else {
-            System.out.println("\nJogador errou o ataque!");
-            System.out.println("\nPontos de vida Inimigo: " + vidaInimigo);
+            System.out.println("Jogador errou o ataque!");
         }
-
+        System.out.println("Pontos de vida Inimigo: " + vidaInimigo);
         setAtaque(gerarValoresAleatorios());
 
     }
@@ -65,7 +66,6 @@ public class Jogador {
         if (getVida() > 0) {
             return 1;
         } else {
-            System.out.println("Suas vidas acabaram!");
             return 0;
         }
     }
