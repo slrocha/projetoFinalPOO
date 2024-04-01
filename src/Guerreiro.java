@@ -7,21 +7,19 @@ public class Guerreiro extends Jogador {
 
     public Guerreiro() { }
 
-    public void ataque() {
+    public void ataque(Inimigo inimigo) {
         System.out.println("Escolha seu ataque Guerreiro:");
         System.out.println("1- Soco devastador");
         System.out.println("2- Ataque do trovão");
         System.out.println("3- Ataque Giratório");
         System.out.println("4- Golpe de Espada");
         int option = scanner.nextInt();
-        Inimigo inimigo = new Inimigo();
 
         switch (option) {
             case 1:
                 System.out.println("SOCO DEVASTADOOOR!!");
                 atacar(inimigo);
                 break;
-
             case 2:
                 System.out.println("ATAQUE DE TROVÃO!!");
                 atacar(inimigo);
@@ -43,17 +41,16 @@ public class Guerreiro extends Jogador {
         System.out.println("1- Escudo");
         System.out.println("2- Desviar");
         int option = scanner.nextInt();
-        Inimigo inimigo = new Inimigo();
 
         switch (option) {
             case 1:
-                System.out.println("Posisão de defesa");
-                defender(inimigo);
+                System.out.println("Posição de defesa");
+                defender();
                 break;
 
             case 2:
                 System.out.println("Você optou desviar do ataque inimigo");
-                defender(inimigo);
+                defender();
                 break;
         }
     }

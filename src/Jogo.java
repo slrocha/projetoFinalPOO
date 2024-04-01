@@ -37,8 +37,8 @@ public class Jogo {
 
     public void iniciarBatalha( String type) {
         Random option = new Random();
-        int iniJogador = option.nextInt(21);
-        int iniInimigo = option.nextInt(21);
+        int iniJogador = 1; //= option.nextInt(21);
+        int iniInimigo = 2;//option.nextInt(21);
 
         System.out.println("Jogador: " + iniJogador);
         System.out.println("Inimigo: " + iniInimigo);
@@ -47,11 +47,11 @@ public class Jogo {
             if (type.equals("G")) {
                 Guerreiro guerreiro = new Guerreiro();
                 if (iniJogador > iniInimigo) {
-                    guerreiro.ataque();
+                    guerreiro.ataque(inimigo);
                     inimigo.defender(guerreiro);
                 } else {
-                    inimigo.atacar(guerreiro);
                     guerreiro.defesa();
+                    inimigo.atacar(guerreiro);
                 }
             } else {
                 Mago mago = new Mago();
