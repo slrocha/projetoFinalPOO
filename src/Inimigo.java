@@ -50,10 +50,10 @@ public class Inimigo{
         int ataqueInimigo = getAtaque();
 
         if (jogador.estaVivo()==1) {
-            System.out.println("Nº de vida do jogador : " + vidaJodador);
             if (ataqueInimigo > defesaJogador) {
                 System.out.println("Ataque inimigo: " + ataqueInimigo);
                 vidaJodador = vidaJodador - (ataqueInimigo - defesaJogador);
+                System.out.println("Nº de vida do jogador : " + vidaJodador);
                 jogador.setVida(vidaJodador);
             } else {
                 System.out.println("Ataque inimigo: " + ataqueInimigo);
