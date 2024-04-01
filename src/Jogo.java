@@ -68,8 +68,8 @@ public class Jogo {
                         mago.ataque(inimigo);
                         inimigo.defender(mago);
                     } else {
-                        inimigo.atacar(mago);
                         mago.defesa(inimigo);
+                        inimigo.atacar(mago);
                     }
                 }
             }

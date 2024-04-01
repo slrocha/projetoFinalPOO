@@ -53,7 +53,6 @@ public class Jogador {
             vidaInimigo = vidaInimigo - (ataqueJogador - defesaInimigo);
             System.out.println("Você acertou o inimigo!");
             inimigo.setVida(vidaInimigo);
-            System.out.println("Vida Inimigo = " + vidaInimigo);
         } else {
             System.out.println("Ataque jogador: " + ataqueJogador);
             System.out.println("Você errou o ataque!");
@@ -66,10 +65,7 @@ public class Jogador {
         int vidaJogador = getVida();
 
         if (ataqueI > defesaJogador){
-            System.out.println("Defesa jogador: " + defesaJogador);
-            vidaJogador = vidaJogador - (ataqueI - defesaJogador);
-            setVida(vidaJogador);
-            System.out.println("O Jogador está vivo e possui " + vidaJogador + " pontos de vidas!");
+            System.out.println("O Jogador está vivo e possui " + getVida() + " pontos de vidas!");
         }else {
             System.out.println("Defesa jogador: " + defesaJogador);
             System.out.println("O Jogador não sofreu dano");
