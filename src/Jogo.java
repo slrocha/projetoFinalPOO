@@ -46,7 +46,7 @@ public class Jogo {
         Guerreiro guerreiro = new Guerreiro();
         Mago mago = new Mago();
 
-        while (inimigo.estaVivo() != 0 && (guerreiro.estaVivo() != 0 || mago.estaVivo() !=0)) {
+        while (inimigo.estaVivo() != 0 && jogador.estaVivo() != 0) {
             System.out.println("=========================");
 
             iniJogador = gerarValoresAleatorios();

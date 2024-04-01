@@ -8,7 +8,7 @@ public class Inimigo{
 
 
     public Inimigo() {
-        this.vida = 30;
+        this.vida = 10;
         this.defesa = gerarValoresAleatorios();
         this.ataque = gerarValoresAleatorios();
     }
