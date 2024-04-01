@@ -1,3 +1,5 @@
+Projeto desenvolvido para a Elastech com o objetivo de criar um jogo RPG.
+
 Regra do Jogo 
 1.	Início da Batalha: Karen
 •	O jogo começa com a escolha da personagem entre "Guerreiro ou Mago”.
@@ -28,11 +30,11 @@ Iniciativas: São números aleatórios, gerados para definir quem irá iniciar o
 •	Se a vida do inimigo chegar a zero, é exibida a mensagem "Inimigo foi derrotado!.
 
 Integrantes do Grupo:
-Aline Alves
-Alyce Quegi
-Bianca Leal
-Cecília Beatriz
-Dani Botêlho
-Dani Lima
-Gabrielle Stephanie
-Stephanie Lima
+• Aline Alves
+• Alyce Quegi
+• Bianca Leal
+• Cecília Beatriz
+• Dani Botêlho
+• Dani Lima
+• Gabrielle Stephanie
+• Stephanie Lima
