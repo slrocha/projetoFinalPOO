@@ -46,32 +46,33 @@ public class Jogador {
         setAtaque(gerarValoresAleatorios());
         int defesaInimigo = inimigo.getDefesa();
         int vidaInimigo = inimigo.getVida();
+        int ataqueJogador = getAtaque();
 
-        if (ataque > defesaInimigo) {
-            System.out.println("Ataque jogador: " + ataque);
-            vidaInimigo = vidaInimigo - (ataque - defesaInimigo);
+        if (ataqueJogador > defesaInimigo) {
+            System.out.println("Ataque jogador: " + ataqueJogador);
+            vidaInimigo = vidaInimigo - (ataqueJogador - defesaInimigo);
             System.out.println("Você acertou o inimigo!");
             inimigo.setVida(vidaInimigo);
-            System.out.println("Vida Inimigo = " + inimigo.getVida());
+            System.out.println("Vida Inimigo = " + vidaInimigo);
         } else {
-            System.out.println("Ataque jogador: " + ataque);
+            System.out.println("Ataque jogador: " + ataqueJogador);
             System.out.println("Você errou o ataque!");
         }
     }
 
     public void defender(Inimigo inimigo) {
-        defesa = gerarValoresAleatorios();
+        int defesaJogador = getDefesa();
         int ataqueI = inimigo.getAtaque();
         int vidaJogador = getVida();
 
-        if (ataqueI > defesa){
-            System.out.println("Defesa jogador: " + defesa);
-            vidaJogador = vidaJogador - (ataqueI - defesa);
+        if (ataqueI > defesaJogador){
+            System.out.println("Defesa jogador: " + defesaJogador);
+            vidaJogador = vidaJogador - (ataqueI - defesaJogador);
             setVida(vidaJogador);
-            System.out.println("O Jogador está vivo e possui " + vida + " pontos de vidas!");
+            System.out.println("O Jogador está vivo e possui " + vidaJogador + " pontos de vidas!");
         }else {
-            System.out.println("Defesa jogador: " + defesa);
-           // System.out.println("O Jogador não sofreu dano");
+            System.out.println("Defesa jogador: " + defesaJogador);
+            System.out.println("O Jogador não sofreu dano");
        }
     }
 

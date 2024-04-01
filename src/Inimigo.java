@@ -43,31 +43,34 @@ public class Inimigo{
     }
 
     public void atacar(Jogador jogador) {
-        setAtaque(gerarValoresAleatorios());
+//        setAtaque(gerarValoresAleatorios());
         int defesaJogador = jogador.getDefesa();
         int vidaJodador = jogador.getVida();
+        int ataqueInimigo = getAtaque();
 
-        if (ataque > defesaJogador) {
-            System.out.println("Ataque inimigo: " + ataque);
-            vidaJodador = vidaJodador - (ataque - defesaJogador);
+        if (ataqueInimigo > defesaJogador) {
+            System.out.println("Ataque inimigo: " + ataqueInimigo);
+            vidaJodador = vidaJodador - (ataqueInimigo - defesaJogador);
             jogador.setVida(vidaJodador);
-            System.out.println("Vida do inimigo:"+vida);
+            System.out.println("Vida do Jogador:"+vidaJodador);
         } else {
-            System.out.println("Você errou o ataque!");
+            System.out.println("Ataque inimigo: " + ataqueInimigo);
+            System.out.println("Inimigo errou o ataque!");
         }
     }
 
     public void defender(Jogador jogador) {
         int ataqueJogador = jogador.getAtaque();
         int vidaInimigo = getVida();
+        int defesaInimigo = getDefesa();
 
-        if (ataqueJogador > defesa) {
-            System.out.println("Defesa inimigo: " + defesa);
-            vidaInimigo = vidaInimigo - (ataqueJogador - defesa);
+        if (ataqueJogador > defesaInimigo) {
+            System.out.println("Defesa inimigo: " + defesaInimigo);
+            vidaInimigo = vidaInimigo - (ataqueJogador - defesaInimigo);
             setVida(vidaInimigo);
-            System.out.println("O inimigo está vivo. Vida restante:  " + vida);
+            System.out.println("O inimigo está vivo. Vida restante:  " + vidaInimigo);
         } else {
-            System.out.println("Defesa inimigo: " + defesa);
+            System.out.println("Defesa inimigo: " + defesaInimigo);
             System.out.println("O inimigo não sofreu dano.");
         }
         setDefesa(gerarValoresAleatorios());
