@@ -77,7 +77,7 @@ public class Inimigo{
     }
 
     public int estaVivo() {
-        if (vida > 0) {
+        if (getVida() > 0) {
             return 1;
         } else {
             System.out.println("Inimigo está morto");
