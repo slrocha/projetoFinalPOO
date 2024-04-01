@@ -14,7 +14,6 @@ public class Mago extends Jogador {
 		System.out.println("3- Explosão de Gelo");
 		System.out.println("4- Míssil Mágico");
 		int option = scanner.nextInt();
-		//Inimigo inimigo = new Inimigo();
 
 		switch (option) {
 			case 1:
@@ -43,7 +42,6 @@ public class Mago extends Jogador {
 		System.out.println("1- Escudo Mágico");
 		System.out.println("2- Teleporte");
 		int option = scanner.nextInt();
-		//Inimigo inimigo = new Inimigo();
 
 		switch (option) {
 			case 1:

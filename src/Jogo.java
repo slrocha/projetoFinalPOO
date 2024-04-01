@@ -35,32 +35,42 @@ public class Jogo {
         }
     }
 
+    private int gerarValoresAleatorios() {
+        Random random = new Random();
+        return random.nextInt(20) + 1;
+    }
+
     public void iniciarBatalha( String type) {
-        Random option = new Random();
+
+        int iniJogador, iniInimigo;
 
         while (inimigo.estaVivo() != 0 && jogador.estaVivo() != 0) {
             System.out.println("=========================");
-            int iniJogador = option.nextInt(21);
-            int iniInimigo = option.nextInt(21);
-            System.out.println("Iniciativa do Jogador: " + iniJogador);
-            System.out.println("Iniciativa do Inimigo: " + iniInimigo);
-            if (type.equals("G")) {
-                Guerreiro guerreiro = new Guerreiro();
-                if (iniJogador > iniInimigo) {
-                    guerreiro.ataque(inimigo);
-                    inimigo.defender(guerreiro);
+
+            iniJogador = gerarValoresAleatorios();
+            iniInimigo = gerarValoresAleatorios();
+
+            if (iniJogador != iniInimigo){
+                System.out.println("Iniciativa do Jogador: " + iniJogador);
+                System.out.println("Iniciativa do Inimigo: " + iniInimigo);
+                if (type.equals("G")) {
+                    Guerreiro guerreiro = new Guerreiro();
+                    if (iniJogador > iniInimigo) {
+                        guerreiro.ataque(inimigo);
+                        inimigo.defender(guerreiro);
+                    } else {
+                        guerreiro.defesa(inimigo);
+                        inimigo.atacar(guerreiro);
+                    }
                 } else {
-                    guerreiro.defesa(inimigo);
-                    inimigo.atacar(guerreiro);
-                }
-            } else {
-                Mago mago = new Mago();
-                if (iniJogador > iniInimigo) {
-                    mago.ataque(inimigo);
-                    inimigo.defender(mago);
-                } else {
-                    inimigo.atacar(mago);
-                    mago.defesa(inimigo);
+                    Mago mago = new Mago();
+                    if (iniJogador > iniInimigo) {
+                        mago.ataque(inimigo);
+                        inimigo.defender(mago);
+                    } else {
+                        inimigo.atacar(mago);
+                        mago.defesa(inimigo);
+                    }
                 }
             }
         }
