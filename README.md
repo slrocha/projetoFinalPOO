@@ -1,8 +1,8 @@
-Projeto desenvolvido para a Elastech com o objetivo de criar um jogo RPG.
+Projeto desenvolvido para a Elastech com o objetivo de criar um jogo RPG em JAVA, visando apresentar as habilidades desenvolvidas até o exato momento - especialmente envolvendo programação orientada a objetos.
 
 Regra do Jogo 
 1.	Início da Batalha: Karen
-•	O jogo começa com a escolha da personagem entre "Guerreiro ou Mago”.
+•	O jogo começa com a escolha da personagem entre "Guerreiro ou Mago”;
 •	Após escolhe o jogador é recebido com a mensagem "Seja bem-vindo, “Personagem”! Vamos iniciar sua batalha".
 •	São mostradas as iniciativas do jogador e do inimigo;
 Iniciativas: São números aleatórios, gerados para definir quem irá iniciar o jogo( Jogador x Inimigo).
